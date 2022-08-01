@@ -11,7 +11,7 @@ import SwiftUI
 struct RaiffeisenTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserList()
         }
     }
 }

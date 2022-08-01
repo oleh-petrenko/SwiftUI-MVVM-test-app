@@ -27,7 +27,14 @@ struct UserDetailList: View {
                 List(userDetailListViewModel.userPublicRepositories) { repository in
                     Link(destination: repository.url, label: {
                         Text(repository.url.lastPathComponent)
-                    })
+                    }).contextMenu{
+                        Button {
+                            UIPasteboard.general.url = repository.url
+                        } label: {
+                            Text("Copy")
+                        }
+
+                    }
                 }
                 .navigationTitle(Constants.title)
             }

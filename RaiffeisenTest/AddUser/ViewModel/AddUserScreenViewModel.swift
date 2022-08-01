@@ -16,7 +16,7 @@ final class AddUserScreenViewModel: ObservableObject {
         
     }
     
-    @Published var validationError: String = ""
+    @Published private(set) var validationError: String = ""
     
     func validate(_ value: String) -> Bool {
         do {
@@ -28,7 +28,7 @@ final class AddUserScreenViewModel: ObservableObject {
             }
         }
         catch {
-            print("Reeg Exp validation error --> ", error.localizedDescription)
+            print("Reg Exp validation error --> ", error.localizedDescription)
         }
         
         validationError = Constants.errorText

@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-//struct UserDetailList: View {
-//
-//    private struct Constants {
-//
-//        static let title = "GitHub public repos"
-//
-//    }
-//
-//    @ObservedObject var userDetailListViewModel: UserDetailListViewModel
-//
-//    var body: some View {
-//        List(userDetailListViewModel.userPublicRepositories) { repository in
-//            Link(destination: repository.url, label: {
-//                Text(repository.url.lastPathComponent)
-//            })
-//        }
-//        .navigationTitle(Constants.title)
-//        .onAppear {
-//            userDetailListViewModel.getPublicRepositories()
-//        }
-//    }
-//
-//}
-
 struct UserDetailList: View {
     
     private struct Constants {

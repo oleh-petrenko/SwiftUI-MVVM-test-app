@@ -21,33 +21,21 @@ struct UserList: View {
     init() {
         self.userListViewModel = UserListViewModel()
     }
-    
-    @State var showAddUserScreen = false
-    
+        
     var body: some View {
         NavigationView {
             List(userListViewModel.users) { user in
-                ZStack(alignment: .leading) {
-                    NavigationLink(destination: UserDetailList(userDetailListViewModel: UserDetailListViewModel(user: user)), label: { Text("") })
-                    UserRow(user: user)
-                }
+                NavigationLink(destination: UserDetailList(userDetailListViewModel: UserDetailListViewModel(user: user)), label: { UserRow(user: user) })
             }
             .navigationTitle(Constants.title)
             .toolbar {
-                ZStack {
-                    NavigationLink(isActive: $showAddUserScreen, destination: {
-                        AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: userListViewModel)
-                    }, label: {
-                        Text("")
-                    })
-                    Button {
-                        showAddUserScreen = true
-                    } label: {
-                        Image(systemName: Constants.addUserButtonImageString)
-                            .renderingMode(.original)
-                            .foregroundColor(.blue)
-                    }
-                }
+                NavigationLink(destination: {
+                    AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: userListViewModel)
+                }, label: {
+                    Image(systemName: Constants.addUserButtonImageString)
+                        .renderingMode(.original)
+                        .foregroundColor(.blue)
+                })
             }
         }
     }

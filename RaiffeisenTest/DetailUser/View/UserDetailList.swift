@@ -31,8 +31,10 @@ struct UserDetailList: View {
                 }
                 .navigationTitle(Constants.title)
             }
-        }.task {
-            await userDetailListViewModel.getPublicRepositories()
+        }.onAppear {
+            Task {
+                await userDetailListViewModel.getPublicRepositories()
+            }
         }
     }
     

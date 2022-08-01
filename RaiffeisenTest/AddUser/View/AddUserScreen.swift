@@ -24,13 +24,11 @@ struct AddUserScreen: View {
     
     @State private var login = ""
     @State private var prompt = ""
-    @FocusState private var focusedField: Bool
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 TextField(Constants.placeholder, text: $login)
-                    .focused($focusedField)
                     .autocapitalization(.none)
             }.padding(8)
                 .background(Color(UIColor.secondarySystemBackground))
@@ -43,9 +41,8 @@ struct AddUserScreen: View {
         Spacer()
         Button(action: {
             let isValid = addUserScreenViewModel.validate(login)
-            focusedField = !isValid
-            
             if isValid {
+                self.hideKeyboard()
                 self.presentationMode.wrappedValue.dismiss()
                 self.userNetwork.loadUserInfo(endpoint: login)
             }
@@ -66,4 +63,13 @@ struct AddUserScreen_Previews: PreviewProvider {
     static var previews: some View {
         AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: UserListViewModel())
     }
+}
+
+extension View {
+    
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
+    }
+    
 }

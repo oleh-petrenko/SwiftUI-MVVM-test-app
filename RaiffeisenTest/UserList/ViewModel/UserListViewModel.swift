@@ -35,7 +35,6 @@ extension UserListViewModel: UserNetwork {
         guard let url = URL(string: urlString) else {
             fatalError("Missing URL")
         }
-
         
         let urlRequest = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in

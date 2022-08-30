@@ -20,7 +20,6 @@ struct AddUserScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var addUserScreenViewModel: AddUserScreenViewModel
-    var userNetwork: UserNetwork
     
     @State private var login = ""
     @State private var prompt = ""
@@ -44,7 +43,7 @@ struct AddUserScreen: View {
             if isValid {
                 self.hideKeyboard()
                 self.presentationMode.wrappedValue.dismiss()
-                self.userNetwork.loadUserInfo(endpoint: login)
+                self.addUserScreenViewModel.loadUserInfo(endpoint: login)
             }
         }) {
             Text(Constants.saveButtonTitle)
@@ -59,11 +58,11 @@ struct AddUserScreen: View {
     
 }
 
-struct AddUserScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: UserListViewModel())
-    }
-}
+//struct AddUserScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: UserListViewModel())
+//    }
+//}
 
 extension View {
     

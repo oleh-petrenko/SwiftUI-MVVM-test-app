@@ -30,7 +30,7 @@ struct UserList: View {
             .navigationTitle(Constants.title)
             .toolbar {
                 NavigationLink(destination: {
-                    AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(), userNetwork: userListViewModel)
+                    AddUserScreen(addUserScreenViewModel: AddUserScreenViewModel(userListViewModel: userListViewModel))
                 }, label: {
                     Image(systemName: Constants.addUserButtonImageString)
                         .renderingMode(.original)

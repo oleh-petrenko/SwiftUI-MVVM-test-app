@@ -9,13 +9,10 @@ import Foundation
 import SwiftUI
 
 private struct Constants {
-    
-    static let baseUrlString = "https://api.github.com/users/"
+
     static let usersKey = "Users"
-    
+
 }
-
-
 
 final class UserListViewModel: ObservableObject {
 
@@ -27,42 +24,11 @@ final class UserListViewModel: ObservableObject {
 
 }
 
-extension UserListViewModel: UserNetwork {
+extension UserListViewModel: UserListViewModelInput {
     
-    func loadUserInfo(endpoint: String) {
-        let urlString = "\(Constants.baseUrlString)\(endpoint)"
-        
-        guard let url = URL(string: urlString) else {
-            fatalError("Missing URL")
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                print("Request error: ", error)
-                return
-            }
-
-            guard let response = response as? HTTPURLResponse else { return }
-
-            if response.statusCode == 200 {
-                guard let data = data else { return }
-                
-                DispatchQueue.main.async {
-                    do {
-                        let decoder = JSONDecoder()
-//                        decoder.keyDecodingStrategy = .convertFromSnakeCase //Пробовал такую штуку - чего-то не завелось
-                        let decodedUser = try decoder.decode(User.self, from: data)
-                        self.users.append(decodedUser)
-                        self.saveUsers(self.users)
-                    } catch let error {
-                        print("Error decoding: ", error)
-                    }
-                }
-            }
-        }
-
-        dataTask.resume()
+    func saveAndAddNewUser(_ user: User) {
+        users.append(user)
+        saveUsers(users)
     }
     
 }

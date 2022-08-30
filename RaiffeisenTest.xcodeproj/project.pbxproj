@@ -24,7 +24,7 @@
 		FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */; };
 		FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */; };
 		FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D828980431003988A5 /* LocalUserRepository.swift */; };
-		FC5D27DB28980546003988A5 /* UserNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27DA28980546003988A5 /* UserNetwork.swift */; };
+		FCB19E6228BE6AC100354911 /* UserListViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailListViewModel.swift; sourceTree = "<group>"; };
 		FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPublicRepository.swift; sourceTree = "<group>"; };
 		FC5D27D828980431003988A5 /* LocalUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepository.swift; sourceTree = "<group>"; };
-		FC5D27DA28980546003988A5 /* UserNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetwork.swift; sourceTree = "<group>"; };
+		FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				FC5D27D828980431003988A5 /* LocalUserRepository.swift */,
-				FC5D27DA28980546003988A5 /* UserNetwork.swift */,
+				FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -312,7 +312,6 @@
 				FC5D27D02897FD51003988A5 /* UserDetailList.swift in Sources */,
 				FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */,
 				FC5D27AE2897B779003988A5 /* UserList.swift in Sources */,
-				FC5D27DB28980546003988A5 /* UserNetwork.swift in Sources */,
 				FC5D27BE2897C2AB003988A5 /* ImageCache.swift in Sources */,
 				FC5D27C02897C2AB003988A5 /* EnvironmentValues+ImageCache.swift in Sources */,
 				FC5D279B2897B3CA003988A5 /* RaiffeisenTestApp.swift in Sources */,
@@ -322,6 +321,7 @@
 				FC5D27AB2897B678003988A5 /* User.swift in Sources */,
 				FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */,
 				FC5D27C62897D738003988A5 /* AddUserScreen.swift in Sources */,
+				FCB19E6228BE6AC100354911 /* UserListViewModelInput.swift in Sources */,
 				FC5D27B12897B83A003988A5 /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

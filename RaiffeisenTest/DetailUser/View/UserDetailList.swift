@@ -44,7 +44,7 @@ struct UserDetailList: View {
             }
         }
     }
-    
+
 }
 
 struct UserDetailList_Previews: PreviewProvider {

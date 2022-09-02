@@ -9,7 +9,7 @@ import Foundation
 
 protocol LocalUserRepository {
     
-    func saveUsers(_ users: [User])
-    func fetchUsers() -> [User]
+    func saveUsersToUserDefaults(_ users: [User])
+    func fetchUsersFromUserDefaults() -> [User]
     
 }

@@ -24,7 +24,7 @@
 		FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */; };
 		FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */; };
 		FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D828980431003988A5 /* LocalUserRepository.swift */; };
-		FCB19E6228BE6AC100354911 /* UserListViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */; };
+		FC83585A28C0820000B2557C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83585928C0820000B2557C /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailListViewModel.swift; sourceTree = "<group>"; };
 		FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPublicRepository.swift; sourceTree = "<group>"; };
 		FC5D27D828980431003988A5 /* LocalUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepository.swift; sourceTree = "<group>"; };
-		FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelInput.swift; sourceTree = "<group>"; };
+		FC83585928C0820000B2557C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,7 @@
 		FC5D27992897B3CA003988A5 /* RaiffeisenTest */ = {
 			isa = PBXGroup;
 			children = (
+				FC83585728C081E500B2557C /* Shared */,
 				FC5D27CD2897FD31003988A5 /* DetailUser */,
 				FC5D27C32897D6DD003988A5 /* AddUser */,
 				FC5D27A82897B616003988A5 /* UserList */,
@@ -232,9 +233,24 @@
 			isa = PBXGroup;
 			children = (
 				FC5D27D828980431003988A5 /* LocalUserRepository.swift */,
-				FCB19E6128BE6AC100354911 /* UserListViewModelInput.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FC83585728C081E500B2557C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FC83585828C081EE00B2557C /* Network Service */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FC83585828C081EE00B2557C /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				FC83585928C0820000B2557C /* Networking.swift */,
+			);
+			path = "Network Service";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +326,7 @@
 				FC5D27BD2897C2AB003988A5 /* AsyncImage.swift in Sources */,
 				FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */,
 				FC5D27D02897FD51003988A5 /* UserDetailList.swift in Sources */,
+				FC83585A28C0820000B2557C /* Networking.swift in Sources */,
 				FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */,
 				FC5D27AE2897B779003988A5 /* UserList.swift in Sources */,
 				FC5D27BE2897C2AB003988A5 /* ImageCache.swift in Sources */,
@@ -321,7 +338,6 @@
 				FC5D27AB2897B678003988A5 /* User.swift in Sources */,
 				FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */,
 				FC5D27C62897D738003988A5 /* AddUserScreen.swift in Sources */,
-				FCB19E6228BE6AC100354911 /* UserListViewModelInput.swift in Sources */,
 				FC5D27B12897B83A003988A5 /* UserListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

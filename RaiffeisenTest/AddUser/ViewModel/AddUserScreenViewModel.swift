@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 final class AddUserScreenViewModel: ObservableObject {
     
@@ -19,11 +20,7 @@ final class AddUserScreenViewModel: ObservableObject {
     
     @Published private(set) var validationError: String = ""
     
-    init(userListViewModel: UserListViewModelInput) {
-        self.userListViewModel = userListViewModel
-    }
-    
-    private let userListViewModel: UserListViewModelInput
+    lazy private(set) var publisher = PassthroughSubject<User, Never>()
     
     func validate(_ value: String) -> Bool {
         do {
@@ -67,7 +64,7 @@ final class AddUserScreenViewModel: ObservableObject {
                         let decoder = JSONDecoder()
 //                        decoder.keyDecodingStrategy = .convertFromSnakeCase //Пробовал такую штуку - чего-то не завелось
                         let decodedUser = try decoder.decode(User.self, from: data)
-                        self.userListViewModel.saveAndAddNewUser(decodedUser)
+                        self.publisher.send(decodedUser)
                     } catch let error {
                         print("Error decoding: ", error)
                     }

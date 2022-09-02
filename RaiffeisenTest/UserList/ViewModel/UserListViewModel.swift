@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 private struct Constants {
 
@@ -16,39 +17,48 @@ private struct Constants {
 
 final class UserListViewModel: ObservableObject {
 
+    @AppStorage(Constants.usersKey) var cahedUsers: Data?
     @Published var users: [User] = []
-
+    
+    lazy private(set) var addUserScreenViewModel: AddUserScreenViewModel = {
+        let addUserScreenViewModel = AddUserScreenViewModel()
+        let cancellable = addUserScreenViewModel.publisher.sink(receiveValue: { user in
+            self.saveAndAddNewUser(user)
+        })
+        cancellables.append(cancellable)
+        
+        return addUserScreenViewModel
+    }()
+    
     init() {
-        users = fetchUsers()
+        users = fetchUsersFromUserDefaults()
     }
 
-}
-
-extension UserListViewModel: UserListViewModelInput {
+    private var cancellables: [AnyCancellable] = []
     
-    func saveAndAddNewUser(_ user: User) {
+    private func saveAndAddNewUser(_ user: User) {
         users.append(user)
-        saveUsers(users)
+        saveUsersToUserDefaults(users)
     }
     
 }
 
 extension UserListViewModel: LocalUserRepository {
     
-    func saveUsers(_ users: [User]) {
+    func saveUsersToUserDefaults(_ users: [User]) {
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(users)
             
-            UserDefaults.standard.set(data, forKey: Constants.usersKey)
+            cahedUsers = data
         } catch {
             print(error.localizedDescription)
         }
         
     }
     
-    func fetchUsers() -> [User] {
-        if let userData = UserDefaults.standard.data(forKey: Constants.usersKey) {
+    func fetchUsersFromUserDefaults() -> [User] {
+        if let userData = cahedUsers {
             do {
                 let decoder = JSONDecoder()
                 let decodedUsers = try decoder.decode([User].self, from: userData)

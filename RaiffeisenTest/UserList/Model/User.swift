@@ -28,4 +28,21 @@ struct User: Codable, Identifiable {
         
     }
     
+    func encode() -> Data? {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(self) {
+            return encoded
+        } else {
+            return nil
+        }
+    }
+    
+    static func decode(userData: Data) -> User? {
+        if let user = try? JSONDecoder().decode(User.self, from: userData) {
+            return user
+        } else {
+            return nil
+        }
+    }
+    
 }

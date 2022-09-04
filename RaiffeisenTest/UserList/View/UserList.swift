@@ -16,18 +16,19 @@ struct UserList: View {
         
     }
     
+//    @Environment
+//    @EnvironmentValues
+//    @EnvironmentalModifier
+//    @EnvironmentKey
+    @EnvironmentObject var numberOfCachedUsersModel: NumberOfCachedUsersModel
     @ObservedObject var userListViewModel: UserListViewModel
     
-    init() {
-        self.userListViewModel = UserListViewModel()
-    }
-        
     var body: some View {
         NavigationView {
             List(userListViewModel.users) { user in
                 NavigationLink(destination: UserDetailList(userDetailListViewModel: UserDetailListViewModel(user: user)), label: { UserRow(user: user) })
             }
-            .navigationTitle(Constants.title)
+            .navigationTitle("\(Constants.title): \(numberOfCachedUsersModel.numberOfCachedUsers)")
             .toolbar {
                 NavigationLink(destination: {
                     AddUserScreen(addUserScreenViewModel: userListViewModel.addUserScreenViewModel)
@@ -42,8 +43,8 @@ struct UserList: View {
     
 }
 
-struct UserList_Previews: PreviewProvider {
-    static var previews: some View {
-        UserList()
-    }
-}
+//struct UserList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserList()
+//    }
+//}

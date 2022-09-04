@@ -13,10 +13,11 @@ struct AddUserScreen: View {
         
         static let title = "Add user"
         static let placeholder = "Login"
-        static let saveButtonTitle = "Save"
+        static let saveButtonTitle = "Try to save"
         
     }
     
+    @EnvironmentObject var numberOfCachedUsersModel: NumberOfCachedUsersModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var addUserScreenViewModel: AddUserScreenViewModel
@@ -46,7 +47,7 @@ struct AddUserScreen: View {
                 self.addUserScreenViewModel.loadUserInfo(endpoint: login)
             }
         }) {
-            Text(Constants.saveButtonTitle)
+            Text("\(Constants.saveButtonTitle) \(numberOfCachedUsersModel.numberOfCachedUsers + 1) user")
                 .foregroundColor(.white)
                 .frame(width: 200, height: 40)
                 .background(Color.green)

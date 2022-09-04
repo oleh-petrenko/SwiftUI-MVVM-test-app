@@ -11,5 +11,6 @@ protocol LocalUserRepository {
     
     func saveUsersToUserDefaults(_ users: [User])
     func fetchUsersFromUserDefaults() -> [User]
+    var numberOfCachedUsers: Int { get }
     
 }

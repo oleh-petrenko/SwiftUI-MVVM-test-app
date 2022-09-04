@@ -73,4 +73,8 @@ extension UserListViewModel: LocalUserRepository {
         return []
     }
     
+    var numberOfCachedUsers: Int {
+        fetchUsersFromUserDefaults().count
+    }
+    
 }

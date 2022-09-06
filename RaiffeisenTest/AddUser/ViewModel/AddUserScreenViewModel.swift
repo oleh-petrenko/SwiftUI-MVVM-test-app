@@ -47,8 +47,8 @@ final class AddUserScreenViewModel: ObservableObject {
             fatalError("Missing URL")
         }
 
-        let executor = NetworkRequestExecutor()
-        let result = await executor.executeRequest(url, method: .get, encoding: ParameterEncoding.URL)
+        let httpClient = HttpClient(baseURL: url, requestExecutor: NetworkRequestExecutor())
+        let result = await httpClient.executeRequest(endpoint: nil, method: .get)
 
         switch result {
         case .success(let response):

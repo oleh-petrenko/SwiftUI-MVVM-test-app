@@ -11,6 +11,7 @@ import Alamofire
 enum NetworkRequestError: Error {
     
     case failed(NetworkResponse)
+    case invalidURL(NetworkResponse?, String)
     
 }
 
@@ -25,7 +26,7 @@ final class NetworkRequestExecutor {
         return Session(configuration: configuration)
     }()
     
-    public func executeRequest(_ url: URLConvertible,
+    func executeRequest(_ url: URLConvertible,
                                method: HTTPMethod = .get,
                                parameters: Parameters? = nil,
                                encoding: ParameterEncoding = ParameterEncoding.JSON, //TODO: make an abstraction for this value

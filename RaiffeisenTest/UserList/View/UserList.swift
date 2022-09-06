@@ -38,6 +38,24 @@ struct UserList: View {
                         .foregroundColor(.blue)
                 })
             }
+        }.onAppear { //TODO: testing HttpClient. Remove later
+//            Task {
+//                let httpClient = HttpClient(baseURL: postURL, requestExecutor: NetworkRequestExecutor())
+//                let result = await httpClient.executeRequest(endpoint: nil, method: .post, parameters: ["1": 1, "2": 2], headers: ["Accept": "application/json"])
+//
+//                switch result {
+//                case .success(let response):
+//                    print(response.responseDictionary)
+//                case .failure(let networkRequestError):
+//                    switch networkRequestError {
+//                    case .invalidURL(_, let urlString):
+//                        print(urlString)
+//                    case .failed(let response):
+//                        let data = response.responseData
+//                        print(data)
+//                    }
+//                }
+//            }
         }
     }
     

@@ -44,7 +44,9 @@ struct AddUserScreen: View {
             if isValid {
                 self.hideKeyboard()
                 self.presentationMode.wrappedValue.dismiss()
-                self.addUserScreenViewModel.loadUserInfo(endpoint: login)
+                Task { //TODO: might be wrong. Study later
+                    await self.addUserScreenViewModel.loadUserInfo(endpoint: login)
+                }
             }
         }) {
             Text("\(Constants.saveButtonTitle) \(numberOfCachedUsersModel.numberOfCachedUsers + 1) user")

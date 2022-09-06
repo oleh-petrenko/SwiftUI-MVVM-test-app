@@ -24,7 +24,13 @@
 		FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */; };
 		FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */; };
 		FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D828980431003988A5 /* LocalUserRepository.swift */; };
-		FC83585A28C0820000B2557C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83585928C0820000B2557C /* Networking.swift */; };
+		FC83585A28C0820000B2557C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83585928C0820000B2557C /* HttpClient.swift */; };
+		FCE07C6E28C6267B005201F8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE07C6D28C6267B005201F8 /* Alamofire */; };
+		FCE07C7028C62739005201F8 /* NetworkCommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C6F28C62739005201F8 /* NetworkCommonProtocols.swift */; };
+		FCE07C7228C62872005201F8 /* NetworkRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C7128C62872005201F8 /* NetworkRequestExecutor.swift */; };
+		FCE07C7428C72242005201F8 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C7328C72242005201F8 /* NetworkResponse.swift */; };
+		FCE07C7828C7241B005201F8 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C7728C7241B005201F8 /* Decodable.swift */; };
+		FCE07C7B28C72B95005201F8 /* TestNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C7A28C72B95005201F8 /* TestNetworking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +52,12 @@
 		FC5D27D22897FD9F003988A5 /* UserDetailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailListViewModel.swift; sourceTree = "<group>"; };
 		FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPublicRepository.swift; sourceTree = "<group>"; };
 		FC5D27D828980431003988A5 /* LocalUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepository.swift; sourceTree = "<group>"; };
-		FC83585928C0820000B2557C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		FC83585928C0820000B2557C /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		FCE07C6F28C62739005201F8 /* NetworkCommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommonProtocols.swift; sourceTree = "<group>"; };
+		FCE07C7128C62872005201F8 /* NetworkRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestExecutor.swift; sourceTree = "<group>"; };
+		FCE07C7328C72242005201F8 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		FCE07C7728C7241B005201F8 /* Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		FCE07C7A28C72B95005201F8 /* TestNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE07C6E28C6267B005201F8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +252,7 @@
 		FC83585728C081E500B2557C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FCE07C7528C723E9005201F8 /* Extensions */,
 				FC83585828C081EE00B2557C /* Network Service */,
 			);
 			path = Shared;
@@ -248,9 +261,37 @@
 		FC83585828C081EE00B2557C /* Network Service */ = {
 			isa = PBXGroup;
 			children = (
-				FC83585928C0820000B2557C /* Networking.swift */,
+				FCE07C7928C72B6E005201F8 /* Test Networking */,
+				FC83585928C0820000B2557C /* HttpClient.swift */,
+				FCE07C6F28C62739005201F8 /* NetworkCommonProtocols.swift */,
+				FCE07C7128C62872005201F8 /* NetworkRequestExecutor.swift */,
+				FCE07C7328C72242005201F8 /* NetworkResponse.swift */,
 			);
 			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		FCE07C7528C723E9005201F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCE07C7628C723FC005201F8 /* Decodable */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCE07C7628C723FC005201F8 /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				FCE07C7728C7241B005201F8 /* Decodable.swift */,
+			);
+			path = Decodable;
+			sourceTree = "<group>";
+		};
+		FCE07C7928C72B6E005201F8 /* Test Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FCE07C7A28C72B95005201F8 /* TestNetworking.swift */,
+			);
+			path = "Test Networking";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +310,9 @@
 			dependencies = (
 			);
 			name = RaiffeisenTest;
+			packageProductDependencies = (
+				FCE07C6D28C6267B005201F8 /* Alamofire */,
+			);
 			productName = RaiffeisenTest;
 			productReference = FC5D27972897B3CA003988A5 /* RaiffeisenTest.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +341,9 @@
 				Base,
 			);
 			mainGroup = FC5D278E2897B3CA003988A5;
+			packageReferences = (
+				FCE07C6C28C6267B005201F8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = FC5D27982897B3CA003988A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,16 +373,21 @@
 				FC5D27BD2897C2AB003988A5 /* AsyncImage.swift in Sources */,
 				FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */,
 				FC5D27D02897FD51003988A5 /* UserDetailList.swift in Sources */,
-				FC83585A28C0820000B2557C /* Networking.swift in Sources */,
+				FC83585A28C0820000B2557C /* HttpClient.swift in Sources */,
 				FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */,
 				FC5D27AE2897B779003988A5 /* UserList.swift in Sources */,
 				FC5D27BE2897C2AB003988A5 /* ImageCache.swift in Sources */,
 				FC5D27C02897C2AB003988A5 /* EnvironmentValues+ImageCache.swift in Sources */,
 				FC5D279B2897B3CA003988A5 /* RaiffeisenTestApp.swift in Sources */,
+				FCE07C7228C62872005201F8 /* NetworkRequestExecutor.swift in Sources */,
 				FC5D27BF2897C2AB003988A5 /* ImageLoader.swift in Sources */,
 				FC5D27C92897E19A003988A5 /* AddUserScreenViewModel.swift in Sources */,
+				FCE07C7028C62739005201F8 /* NetworkCommonProtocols.swift in Sources */,
+				FCE07C7828C7241B005201F8 /* Decodable.swift in Sources */,
 				FC5D27B32897B9D0003988A5 /* UserRow.swift in Sources */,
 				FC5D27AB2897B678003988A5 /* User.swift in Sources */,
+				FCE07C7B28C72B95005201F8 /* TestNetworking.swift in Sources */,
+				FCE07C7428C72242005201F8 /* NetworkResponse.swift in Sources */,
 				FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */,
 				FC5D27C62897D738003988A5 /* AddUserScreen.swift in Sources */,
 				FC5D27B12897B83A003988A5 /* UserListViewModel.swift in Sources */,
@@ -543,6 +595,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCE07C6C28C6267B005201F8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCE07C6D28C6267B005201F8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE07C6C28C6267B005201F8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC5D278F2897B3CA003988A5 /* Project object */;
 }

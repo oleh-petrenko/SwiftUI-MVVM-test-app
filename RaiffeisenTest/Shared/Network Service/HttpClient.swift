@@ -75,7 +75,7 @@ final class HttpClient {
         var outRequestString = ""
         printdebugInfo_request(method, endpoint, parameters, url, headers, &outRequestString)
         
-        let result = await requestExecutor.executeRequest(baseURL, method: method, parameters: allParameters, encoding: encoding, headers: allHeaders)
+        let result = await requestExecutor.executeRequest(url, method: method, parameters: allParameters, encoding: encoding, headers: allHeaders)
         
         printResponseIfNeeded(result: result, outRequestString: &outRequestString)
         

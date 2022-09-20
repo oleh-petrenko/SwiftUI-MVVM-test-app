@@ -17,7 +17,7 @@ private struct Constants {
 
 final class UserListViewModel: ObservableObject {
 
-    @AppStorage(Constants.usersKey) var cahedUsers: Data?
+    @AppStorage(Constants.usersKey) var cachedUsers: Data?
     @Published var users: [User] = []
     
     lazy private(set) var addUserScreenViewModel: AddUserScreenViewModel = {
@@ -30,15 +30,43 @@ final class UserListViewModel: ObservableObject {
         return addUserScreenViewModel
     }()
     
-    init() {
-        users = fetchUsersFromUserDefaults()
+    private let userRepository: UserRepository
+    
+    init(userRepository: UserRepository) {
+        self.userRepository = userRepository
+        self.users = fetchUsersFromDB()//fetchUsersFromUserDefaults()
     }
 
     private var cancellables: [AnyCancellable] = []
     
     private func saveAndAddNewUser(_ user: User) {
         users.append(user)
-        saveUsersToUserDefaults(users)
+//        saveUsersToUserDefaults(users)
+        saveUserToDB(user)
+    }
+    
+    func deleteUser(at offset: IndexSet) {
+        guard let index = offset.first else { return }
+        
+        let user = users[index]
+        deleteUserFromDB(user)
+        users.remove(at: index)
+    }
+    
+    //MARK: - Data Base flow
+    
+    private func fetchUsersFromDB() -> [User] {
+        return userRepository.fetchUsers()
+    }
+    
+    private func saveUserToDB(_ user: User) {
+        let newUsers = [user]
+        userRepository.saveUsers(newUsers)
+    }
+    
+    private func deleteUserFromDB(_ user: User) {
+        let newUsers = [user]
+        userRepository.deleteUsers(newUsers)
     }
     
 }
@@ -50,7 +78,7 @@ extension UserListViewModel: LocalUserRepository {
             let encoder = JSONEncoder()
             let data = try encoder.encode(users)
             
-            cahedUsers = data
+            cachedUsers = data
         } catch {
             print(error.localizedDescription)
         }
@@ -58,7 +86,7 @@ extension UserListViewModel: LocalUserRepository {
     }
     
     func fetchUsersFromUserDefaults() -> [User] {
-        if let userData = cahedUsers {
+        if let userData = cachedUsers {
             do {
                 let decoder = JSONDecoder()
                 let decodedUsers = try decoder.decode([User].self, from: userData)
@@ -74,7 +102,7 @@ extension UserListViewModel: LocalUserRepository {
     }
     
     var numberOfCachedUsers: Int {
-        fetchUsersFromUserDefaults().count
+        users.count
     }
     
 }

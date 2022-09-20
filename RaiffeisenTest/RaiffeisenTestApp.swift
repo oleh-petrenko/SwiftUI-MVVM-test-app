@@ -25,7 +25,7 @@ final class NumberOfCachedUsersModel: ObservableObject {
 @main
 struct RaiffeisenTestApp: App {
     
-    @StateObject var userListViewModel = UserListViewModel()
+    @StateObject var userListViewModel = UserListViewModel(userRepository: UserRepositoryService(dbService: CoreDataDBService(forModel: "Model")))
     
     var body: some Scene {
         WindowGroup {

@@ -25,6 +25,14 @@
 		FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */; };
 		FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D27D828980431003988A5 /* LocalUserRepository.swift */; };
 		FC83585A28C0820000B2557C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83585928C0820000B2557C /* HttpClient.swift */; };
+		FCA224D128D99F4000733FA9 /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224CD28D99F4000733FA9 /* FetchRequest.swift */; };
+		FCA224D228D99F4000733FA9 /* CoreDataDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224CE28D99F4000733FA9 /* CoreDataDBService.swift */; };
+		FCA224D328D99F4000733FA9 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224CF28D99F4000733FA9 /* DataBaseService.swift */; };
+		FCA224D428D99F4000733FA9 /* CoreDataModelConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224D028D99F4000733FA9 /* CoreDataModelConvertible.swift */; };
+		FCA224D728D99F5A00733FA9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCA224D528D99F5A00733FA9 /* Model.xcdatamodeld */; };
+		FCA224DA28D9A06400733FA9 /* UserManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224D828D9A06400733FA9 /* UserManagedObject.swift */; };
+		FCA224DD28D9A2D100733FA9 /* User+CoreDataModelConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224DC28D9A2D100733FA9 /* User+CoreDataModelConvertible.swift */; };
+		FCA224E028D9A39600733FA9 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA224DF28D9A39600733FA9 /* UserRepository.swift */; };
 		FCE07C6E28C6267B005201F8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FCE07C6D28C6267B005201F8 /* Alamofire */; };
 		FCE07C7028C62739005201F8 /* NetworkCommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C6F28C62739005201F8 /* NetworkCommonProtocols.swift */; };
 		FCE07C7228C62872005201F8 /* NetworkRequestExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE07C7128C62872005201F8 /* NetworkRequestExecutor.swift */; };
@@ -53,6 +61,14 @@
 		FC5D27D52897FE9A003988A5 /* UserPublicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPublicRepository.swift; sourceTree = "<group>"; };
 		FC5D27D828980431003988A5 /* LocalUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepository.swift; sourceTree = "<group>"; };
 		FC83585928C0820000B2557C /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		FCA224CD28D99F4000733FA9 /* FetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRequest.swift; sourceTree = "<group>"; };
+		FCA224CE28D99F4000733FA9 /* CoreDataDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDBService.swift; sourceTree = "<group>"; };
+		FCA224CF28D99F4000733FA9 /* DataBaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		FCA224D028D99F4000733FA9 /* CoreDataModelConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModelConvertible.swift; sourceTree = "<group>"; };
+		FCA224D628D99F5A00733FA9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FCA224D828D9A06400733FA9 /* UserManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagedObject.swift; sourceTree = "<group>"; };
+		FCA224DC28D9A2D100733FA9 /* User+CoreDataModelConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataModelConvertible.swift"; sourceTree = "<group>"; };
+		FCA224DF28D9A39600733FA9 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		FCE07C6F28C62739005201F8 /* NetworkCommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommonProtocols.swift; sourceTree = "<group>"; };
 		FCE07C7128C62872005201F8 /* NetworkRequestExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestExecutor.swift; sourceTree = "<group>"; };
 		FCE07C7328C72242005201F8 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
@@ -123,7 +139,9 @@
 		FC5D27A92897B62C003988A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FCA224D828D9A06400733FA9 /* UserManagedObject.swift */,
 				FC5D27AA2897B678003988A5 /* User.swift */,
+				FCA224DC28D9A2D100733FA9 /* User+CoreDataModelConvertible.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,6 +159,7 @@
 		FC5D27AF2897B82B003988A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FCA224DE28D9A38400733FA9 /* Repositories */,
 				FC5D27D7289803FD003988A5 /* Protocols */,
 				FC5D27C12897D674003988A5 /* Services */,
 				FC5D27B02897B83A003988A5 /* UserListViewModel.swift */,
@@ -252,6 +271,7 @@
 		FC83585728C081E500B2557C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FCA224CC28D99F2F00733FA9 /* CoreData */,
 				FCE07C7528C723E9005201F8 /* Extensions */,
 				FC83585828C081EE00B2557C /* Network Service */,
 			);
@@ -268,6 +288,26 @@
 				FCE07C7328C72242005201F8 /* NetworkResponse.swift */,
 			);
 			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		FCA224CC28D99F2F00733FA9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FCA224CE28D99F4000733FA9 /* CoreDataDBService.swift */,
+				FCA224D028D99F4000733FA9 /* CoreDataModelConvertible.swift */,
+				FCA224CF28D99F4000733FA9 /* DataBaseService.swift */,
+				FCA224CD28D99F4000733FA9 /* FetchRequest.swift */,
+				FCA224D528D99F5A00733FA9 /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FCA224DE28D9A38400733FA9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FCA224DF28D9A39600733FA9 /* UserRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		FCE07C7528C723E9005201F8 /* Extensions */ = {
@@ -370,19 +410,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA224D128D99F4000733FA9 /* FetchRequest.swift in Sources */,
 				FC5D27BD2897C2AB003988A5 /* AsyncImage.swift in Sources */,
 				FC5D27D32897FD9F003988A5 /* UserDetailListViewModel.swift in Sources */,
 				FC5D27D02897FD51003988A5 /* UserDetailList.swift in Sources */,
 				FC83585A28C0820000B2557C /* HttpClient.swift in Sources */,
+				FCA224DA28D9A06400733FA9 /* UserManagedObject.swift in Sources */,
 				FC5D27D62897FE9A003988A5 /* UserPublicRepository.swift in Sources */,
+				FCA224D228D99F4000733FA9 /* CoreDataDBService.swift in Sources */,
 				FC5D27AE2897B779003988A5 /* UserList.swift in Sources */,
+				FCA224DD28D9A2D100733FA9 /* User+CoreDataModelConvertible.swift in Sources */,
 				FC5D27BE2897C2AB003988A5 /* ImageCache.swift in Sources */,
 				FC5D27C02897C2AB003988A5 /* EnvironmentValues+ImageCache.swift in Sources */,
 				FC5D279B2897B3CA003988A5 /* RaiffeisenTestApp.swift in Sources */,
+				FCA224D728D99F5A00733FA9 /* Model.xcdatamodeld in Sources */,
 				FCE07C7228C62872005201F8 /* NetworkRequestExecutor.swift in Sources */,
 				FC5D27BF2897C2AB003988A5 /* ImageLoader.swift in Sources */,
 				FC5D27C92897E19A003988A5 /* AddUserScreenViewModel.swift in Sources */,
+				FCA224D328D99F4000733FA9 /* DataBaseService.swift in Sources */,
 				FCE07C7028C62739005201F8 /* NetworkCommonProtocols.swift in Sources */,
+				FCA224E028D9A39600733FA9 /* UserRepository.swift in Sources */,
 				FCE07C7828C7241B005201F8 /* Decodable.swift in Sources */,
 				FC5D27B32897B9D0003988A5 /* UserRow.swift in Sources */,
 				FC5D27AB2897B678003988A5 /* User.swift in Sources */,
@@ -391,6 +438,7 @@
 				FC5D27D928980431003988A5 /* LocalUserRepository.swift in Sources */,
 				FC5D27C62897D738003988A5 /* AddUserScreen.swift in Sources */,
 				FC5D27B12897B83A003988A5 /* UserListViewModel.swift in Sources */,
+				FCA224D428D99F4000733FA9 /* CoreDataModelConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +662,19 @@
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FCA224D528D99F5A00733FA9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCA224D628D99F5A00733FA9 /* Model.xcdatamodel */,
+			);
+			currentVersion = FCA224D628D99F5A00733FA9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FC5D278F2897B3CA003988A5 /* Project object */;
 }
